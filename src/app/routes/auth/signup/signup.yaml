@@ -1,0 +1,38 @@
+paths:
+  /auth/signup/email:
+    post:
+      summary: Create user with Email and Password
+      description: Create new user with given email, password and unique parameters.
+      requestBody:
+        description:
+          The user to create
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/UserSingupForm'  
+      responses:
+        201:
+          description: User created
+        400:
+          description: Bad request
+definitions:
+  UserSingupForm:
+    type: object
+    required:
+      - email
+      - password
+      - username
+      - firstName
+      - lastName
+    properties:
+      email: 
+        type: string
+      password: 
+        type: string
+      username:
+        type: string
+      firstName:
+        type: string
+      lastName:
+        type: string
+

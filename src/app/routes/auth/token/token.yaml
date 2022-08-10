@@ -1,0 +1,26 @@
+paths:
+  /auth/token/refresh:
+    post:
+      summary: Refresh auth token
+      description: Refresh auth token with given refresh token.
+      requestBody:
+        description:
+          The refresh token
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/TokenRefeshBody'  
+      responses:
+        200:
+          description: Token updated
+        400:
+          description: Bad request
+definitions:
+  TokenRefeshBody:
+    type: object
+    required:
+      - refreshToken
+    properties:
+      refreshToken: 
+        refreshToken: string
+

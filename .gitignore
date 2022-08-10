@@ -1,0 +1,4 @@
+node_modules
+dist
+src/app/config/local.config.json
+.env

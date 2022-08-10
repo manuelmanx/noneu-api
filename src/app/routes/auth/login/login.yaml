@@ -1,0 +1,28 @@
+paths:
+  /auth/login/email:
+    post:
+      summary: Login user with email and passwod
+      description: Login a user with email and password to obtain the authentication token and the refresh token.
+      requestBody:
+        description:
+          The user to authenticate
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/UserLoginForm'  
+      responses:
+        200:
+          description: Login success
+        400:
+          description: Bad request
+definitions:
+  UserLoginForm:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      email: 
+        type: string
+      password: 
+        type: string
